@@ -12,13 +12,13 @@ greencar_x=5;
 greencar_y=25;
 
 function add() {
-	background_imgTag= new image();
+	background_imgTag= new Image();
 	background_imgTag.onload=uploadBackground;
 	background_imgTag.src=background_image;
 
-	greencar_imgTag= new image();
-	greencar_imagTag.onload=uploadBackground;
-	background_imgTag.src=background_image;
+	greencar_imgTag= new Image();
+	greencar_imgTag.onload=uploadBackground;
+	greencar_imgTag.src=greencar_image;
 }
 
 function uploadBackground() {
@@ -27,7 +27,7 @@ function uploadBackground() {
 }
 
 function uploadgreencar() {
-    ctx.drawImage(greencar_imgTag,greencar_x,greencary,greencarwidth,greencar_height);
+    ctx.drawImage(greencar_imgTag,greencar_x,greencar_y,greencar_width,greencar_height);
 
 	
 }
@@ -39,8 +39,6 @@ function my_keydown(e)
 {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
-	window.addEventListener("keydown", my_keydown);
-	console.log(keydown)
 		if(keyPressed == '38')
 		{
 			up();
@@ -82,7 +80,7 @@ function up()
 
 function down()
 {
-	if(greencar_y <=500)
+	if(greencar_y <=350)
     {
         greencar_y= greencar_y+10
         console.log("when down arrow is pressed, x = " + greencar_x +"| y =" +greencar_y);
@@ -104,7 +102,7 @@ function left()
 
 function right()
 {
-	if(greencar_x<=700)
+	if(greencar_x<=750)
     {
         greencar_x=greencar_x+10;
         console.log("when right arrow is pressed, x = "+ greencar_x + "| y=" + greencar_y)/
